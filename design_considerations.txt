@@ -1,0 +1,56 @@
+Dear Mr. Benson, or to whom it may concern, 
+
+I am Min Phyo Thura [233523A] from T2, DADE.
+Here is a briefing of how this website is structured. 
+
+Home Page [index.html]
+The navigation bar uses flex two times, and the text areas are clickable with redirects to other pages using relative addressing. 
+A simple home page with a big background picture has been implemented to give off a traditional Korean vibe. The middle block is positioned relative and is made transparent using rgba.
+Another flex has been used to display signature dishes. 
+To highlight interesting info in order to attract customers, a table has been used. 
+The bottom part is made with flex, while the map image is float left within the flex. 
+Absolute addressings with target as blank pages have been used for social media and google map links. 
+(It is mentioned that only relative addressing must be used for internal pages, there is no mentioning for external pages.)
+A div with fixed positioning has been used for call-to-action purpose, and the text is shadowed properly to be legible.
+
+Menu Page [menu.html]
+A slider effecting using css animation and css keyframes has been implemented. It consists of 6 div, 2 of which rotates regularly and change colors.
+Some menu text and anchors to relevant places have been added. 
+6 grids have been used for 6 menu categories with altering colour pallete. 
+Only the current hovered grid will have opacity 1 for the user to have more focus. 
+Hover glow effects have been added over each dish. 
+A long background image has been added to keep user unbored while scolling. 
+
+Order Page [order.html]
+Similar to menu page, 6 div for 6 categories have been implemented, but flex is used this time for practice purposes. 
+The instruction asks for a dropdown lsit, but I personally think my currnet checkbox is more user-friendly and let the user to order several dishes at once at ease. Thus, the checkbox has been used instead of a dropdown. 
+Quantity, requests and flavours are displayed only after selecting a certain dish. 
+Only price information is shown when hovered over the dish image to keep simple ordering.
+The form buttons are made fixed at the bottom so that the user can submit the order form without scrolling to the end of the page. 
+(The weakness of this order form is that an empty form can be submitted without ordering any dish. I decided to sacrifice that weakness for a more user-friendly and easy-to-order form.)
+
+About Us Page [about.html]
+A simple layout with background story and floating images are implemented. 
+The same contact information as in the Home Page is added at the bottom. 
+(The text in About Us page as well as the Home Page are referenced from an online article and are re-paraphased using ChatGPT.)
+https://www.8days.sg/eatanddrink/hawkerfood/7-ginseng-chicken-soup-north-korean-kimchi-myeongdong-kitchen-nanyang-poly-foodgle-hub-821411
+
+Member Registration Page [member.html]
+A simple form design that is aligned center is implemented. 
+Two forms, one for log in and one for sign up, are added. 
+The design is made simple while form validation and pattern are prioritized more. 
+No numbers in some text fields; strong password validation, address and phone number validation are added.
+CSS transitions are added while the input fields are focused. 
+
+A common CSS
+A common CSS is used to control navigation, page width, background, hover effects and such. 
+Some commonly used css properties are added to the common css: such as sub header styles and background colour pallete. 
+
+Error Validation 
+There is one CSS error across all files. 
+The error is in Order Page as well. It is due to hiding the input form of a label, but when the parent checkbox is checked, related labels and inputs fields will be shown, meaning no input or label is hidden in that condition.
+
+That is all what I thought through and implemented while doing this project. 
+I learned a lot of new things such as animation, z-index and transparency etc. 
+I have also mastered the basis from lesson contents such as using css positioning at will, mastering form validation and using flex or grids to align the contents(text) vertically and horizontally. 
+Media query is not used as it is not tested.

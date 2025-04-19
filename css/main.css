@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Overlock+SC&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 2px red solid; */
+    font-family: "Nanum Myeongjo";
+}
+
+main {
+    background-color: burlywood;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.title {
+    font-family: "Overlock SC";
+}
+
+header {
+    display: flex;
+    background-color: peru;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+header div, header nav {
+    margin-right: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    transition: all 0.2s;
+}
+
+header div {
+    display: flex;
+}
+
+.box {
+    margin-right: 10px;
+    padding: 5px;
+    line-height: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: orange;
+    position: relative;
+    top: 5px;
+}
+
+header img {
+    height: 43px;
+    display: block;
+}
+
+footer {
+    text-align: center;
+    background-color: peru;
+    margin-top: 20px;
+}            
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+.middle {
+    vertical-align: sub;
+}
+
+.sub-header {
+    font-family: "Cinzel";
+    font-variant: small-caps;
+    font-size: 2.5em;
+    letter-spacing: 0.3em;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+}
+
+.sub-header span {
+    border-bottom: 2px black solid;
+}
+
+.c1 {
+    background-color: #C48E64;
+}
+.c2 {
+    background-color: #F4A166;
+}
+.c3 {
+    background-color: #FFC48C;
+}
+.c4 {
+    background-color: #FEDBAF;
+}
+.c5 {
+    background-color: #FFAF69;
+}
+
+.white-glow-hover:hover {
+    opacity: 1;
+    box-shadow: 1px 1px 10px white;
+}
+#current, nav:hover {
+    border-bottom: 3px papayawhip solid;
+}
+nav:active, .box:active {
+    color: papayawhip;
+}
+.box:hover {
+    background-color: papayawhip;
+}
+.box:active {
+    color: #C48E64;
+}
+
+input, textarea {
+    line-height: 1em;
+    font-size: 0.9em;
+    background-color: papayawhip;
+}

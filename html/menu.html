@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024px, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
+    <style>
+        #menu-bg {
+            width: 100%;
+            height: 530px;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 512px);
+            grid-template-rows: repeat(2, 265px);
+            overflow: hidden;
+        }
+        #menu-bg img {
+            width: 100%;
+        }
+        #cover1, #cover2 {
+            width: 512px;
+            height: 265px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #cover1 {
+            animation: cover1slide 10s infinite;
+        }
+        @keyframes cover1slide {
+            0%   {top: 0px; left: 0px; background: #F4A166;}
+            25%  {top: 0px; left: 512px; background: #FEDBAF;}
+            50%  {top: 265px; left: 512px; background: #FFC48C;}
+            75%  {top: 265px; left: 0px; background: #FFAF69;}
+            100% {top: 0px; left: 0px; background: #F4A166;}
+        }
+        #cover2 {
+            animation: cover2slide 10s infinite;
+        }
+        @keyframes cover2slide {
+            0%   {top: 265px; left: 512px; background: #FEDBAF;}
+            25%  {top: 265px; left: 0px; background: #FFAF69;}
+            50%  {top: 0px; left: 0px; background: #FEDBAF;}
+            75%  {top: 0px; left: 512px; background: #F4A166;}
+            100% {top: 265px; left: 512px; background: #FEDBAF;}
+        }
+        #menu-text p {
+            text-align: center;
+        }
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            margin-top: 10px;
+        }
+        li {
+            border-bottom: 2px black solid;
+            padding-bottom: 3px;
+        }
+        #menu {
+            background-image: url(../images/menu-bg.png);
+            background-size: cover;
+            background-position: bottom right;
+            height: 2380px;
+        }
+        .grid {
+            width: 90%;
+            margin: 10px auto 10px auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr;
+            grid-template-rows: repeat(2, 180px);
+            opacity: 0.7;
+            position: relative;
+        }
+        .grid section.grid-item {
+            display: flex;
+            border: 1px black solid;
+        }
+        .grid section * {
+            margin: auto;
+            flex: 1;
+        }
+        .grid-item div.grid-img {
+            height: 100%;
+        }
+        .grid-name {
+            padding: 5px;
+            background-color: #893F04;
+            font-size: 1.5em;
+            color: white;
+            font-variant: small-caps;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 30%;
+        }
+        div.grid-img {
+            overflow: hidden;
+        }
+        div.grid-img img {
+            width: 100%;
+            margin-right: 5px;
+        }
+        .grid section:hover {
+            box-shadow: 5px 10px 10px 8px grey;
+        }
+        .right p {
+            text-align: right;
+        }
+        .grid-item p {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div>
+                <div><a href="../html/index.html">
+                    <img src="../images/logo.png" alt="logo" id="logo"></a>
+                    <span class="title">Myeongdong Kitchen</span>
+                </div>
+                <nav><a href="../html/index.html"><i class="material-symbols-outlined middle">home</i>Home</a></nav>
+                <nav id="current"><a href="../html/menu.html"><i class="material-symbols-outlined middle">menu_book</i>Menu</a></nav>
+                <nav><a href="../html/order.html"><i class="material-symbols-outlined middle">restaurant_menu</i>Order</a></nav>
+                <nav><a href="../html/about.html"><i class="material-symbols-outlined middle">info</i>About Us</a></nav>
+            </div>  
+            <p class="box"><a href="../html/member.html"><i class="material-symbols-outlined middle">login</i>Log in</a></p>
+        </header>
+        <div id="menu-bg">
+            <div><img src="../images/menu-bg1.jpeg" alt="menu background"></div>
+            <div><img src="../images/menu-bg2.jpeg" alt="menu background"></div>
+            <div><img src="../images/menu-bg3.jpeg" alt="menu background"></div>
+            <div><img src="../images/menu-bg4.jpeg" alt="menu background"></div>
+            <div id="cover1"><i class="material-symbols-outlined middle">sentiment_very_satisfied</i></div>
+            <div id="cover2"><i class="material-symbols-outlined middle">relax</i></div>    
+        </div>
+        <div id="menu-text">
+            <div class="sub-header"><span>Menu</span></div>
+            <p>Choose your favourite dish from our wide variety of chef's selections, <br>from street foods and appetizers to main dishes and soups.</p>
+        </div>
+        <div id="menu-jump">
+            <ul>
+                <li><a href="#mains">Mains</a></li>
+                <li><a href="#kimchi">Kimchi Lover</a></li>
+                <li><a href="#jjigae">Jjigae</a></li>
+                <li><a href="#ramyeon">Ramyeon</a></li>
+                <li><a href="#sides">Sides</a></li>
+            </ul>
+        </div>
+        <div id="menu">
+            <div class="grid white-glow-hover" id="best">
+                <div class="grid-name"><p>Best Seller</p></div>
+                <section class="grid-item c4">
+                    <div class="grid-img"><img src="../images/japchae.jpeg" alt="japchae"></div>
+                    <p>
+                        Japchae <br>
+                        Glass noodle <br>
+                        $4.50 <br>
+                    </p>
+                </section>
+                <section class="grid-item c2">
+                    <div class="grid-img"><img src="../images/bulgogi.jpeg" alt="chicken bulgogi"></div>
+                    <p>
+                        Chicken Bulgogi with Kimchi Soup<br>
+                        $6.00 <br>
+                    </p>
+                </section>
+                <div class="grid-img"><img src="../images/best.jpeg" alt="best seller"></div>
+                <section class="grid-item c5 right">
+                    <p>
+                        Ginseng Soup <br>
+                        1kg Chicken <br>
+                        $7.00 <br>
+                    </p>
+                    <div class="grid-img"><img src="../images/chxGinseng.jpeg" alt="Chicken Ginseng"></div>
+                </section>
+                <section class="grid-item c1 right">
+                    <p>
+                        Army Stew with Rice<br>
+                        For 2 pax <br>
+                        $9.00 <br>
+                    </p>
+                    <div class="grid-img"><img src="../images/armyStew.jpeg" alt="army stew"></div>
+                </section>
+            </div>
+            <div class="grid white-glow-hover">
+                <div class="grid-name" id="mains">Main Dishes</div>
+                <section class="grid-item c2">
+                    <div class="grid-img"><img src="../images/bibimbap.jpeg" alt="bibimbap"></div>
+                    <p>
+                        Bibimbap <br>
+                        Korean rice salad <br>
+                        $4.50 <br>
+                    </p>
+                </section>
+                <section class="grid-item c4">
+                    <div class="grid-img"><img src="../images/cheesyRice.jpeg" alt="cheesy chicken rice"></div>
+                    <p>
+                        Cheesy Chicken Rice <br>
+                        Sweet <br>
+                        $5.00 <br>
+                    </p>
+                </section>
+                <div class="grid-img"><img src="../images/mains.jpeg" alt="main dish graphic"></div>
+                <section class="grid-item c3 right">
+                    <p>
+                        Grilled Salmon <br>
+                        Sour & Spicy <br>
+                        $5.50 <br>
+                    </p>
+                    <div class="grid-img"><img src="../images/salmon.jpeg" alt="grilled salmon"></div>
+                </section>
+                <section class="grid-item c5 right">
+                    <p>
+                        Bulgogi <br>
+                        Chx, Beef, Pork <br>
+                        $5.00 <br>
+                    </p>
+                    <div class="grid-img"><img src="../images/bulgogi2.jpeg" alt="chicken bulgogi"></div>
+                </section>
+            </div>
+            <div class="grid white-glow-hover">
+                <div class="grid-name" id="kimchi">Kimchi Lover</div>
+                <section class="grid-item c4">
+                    <div class="grid-img"><img src="../images/kimchiRice.jpeg" alt="kimchi fried rice"></div>
+                    <p>
+                        Kimchi Fried Rice <br>
+                        Flavourful <br>
+                        $4.50 <br>
+                    </p>
+                </section>
+                <section class="grid-item c1">
+                    <div class="grid-img"><img src="../images/kimchiRamyeon.jpeg" alt="Kimchi Ramen"></div>
+                    <p>
+                        Kimchi Ramen <br>
+                        Ramen with toppings <br>
+                        $4.50 <br>
+                    </p>
+                </section>
+                <div class="grid-img"><img src="../images/kimchi.jpeg" alt="kimchi graphic"></div>    
+                <section class="grid-item c3 right">
+                    <p>
+                        Kimchi Jjigae <br>
+                        Traditional style <br>
+                        $4.00 <br>
+                    </p>
+                    <div class="grid-img"><img src="../images/kimchiJjigae.jpeg" alt="Kimchi Stew"></div>
+                </section>
+                <section class="grid-item c2 right">
+                    <p>
+                        Kimchi Pancake <br>
+                        Snack <br>
+                        $3.00 <br>
+                    </p>
+                    <div class="grid-img"><img src="../images/kimchiPancake.jpeg" alt="Kimchi Pancake"></div>
+                </section>
+            </div>
+            <div class="grid white-glow-hover">
+                <div class="grid-name" id="jjigae">Jjigae (Stew)</div>
+                <section class="grid-item c5">
+                    <div class="grid-img"><img src="../images/busanGukbap.jpeg" alt="busan gukbap"></div>
+                    <p>
+                        Busan Gukbap <br>
+                        Busan-style Pork Soup <br>
+                        $6.00 <br>
+                    </p>
+                </section>
+                <section class="grid-item c1">
+                    <div class="grid-img"><img src="../images/doenjang.jpeg" alt="doenjang jjigae"></div>
+                    <p>
+                        Doenjang Jjigae <br>
+                        Soybean Paste with Seafood <br>
+                        $6.00 <br>
+                    </p>
+                </section>
+                <div class="grid-img"><img src="../images/jjigae.jpeg" alt="stew graphic"></div>
+                <section class="grid-item c3 right">
+                    <p>
+                        Chicken Porridge <br>
+                        Shredded <br>
+                        $4.00 <br>
+                    </p>
+                    <div class="grid-img"><img src="../images/chxPorridge.jpeg" alt="Chicken Porridge"></div>
+                </section>
+                <section class="grid-item c4 right">
+                    <p>
+                        Mushroom Porridge <br>
+                        Contains sausages <br>
+                        $3.50 <br>
+                    </p>
+                    <div class="grid-img"><img src="../images/mushPorridge.jpeg" alt="Mushroom Porridge"></div>
+                </section>
+            </div>
+            <div class="grid white-glow-hover">
+                <div class="grid-name" id="Ramyeon">Ramyeon (Noodle)</div>
+                <section class="grid-item c5">
+                    <div class="grid-img"><img src="../images/jjajjangmyeong.jpeg" alt="Jjajjangmyeong"></div>
+                    <p>
+                        Jjajjangmyeong <br>
+                        Bean Paste <br>
+                        $4.50 <br>
+                    </p>
+                </section>
+                <section class="grid-item c3">
+                    <div class="grid-img"><img src="../images/jjampong.jpeg" alt="Jjampong"></div>
+                    <p>
+                        Jjampong <br>
+                        Seafood Ramyeon <br>
+                        $5.50 <br>
+                    </p>
+                </section>
+                <div class="grid-img"><img src="../images/ramyeon.jpeg" alt="noodle graphic"></div>
+                <section class="grid-item c4 right">
+                    <p>
+                        Creamy Shin Ramyeon <br>
+                        Popular Flavour <br>
+                        $4.00 <br>
+                    </p>
+                    <div class="grid-img"><img src="../images/shin.jpeg" alt="Creamy Shin Ramyeon"></div>
+                </section>
+                <section class="grid-item c1 right">
+                    <p>
+                        Buldak Ramyeon <br>
+                        Devil Spicy, Cheese & Egg <br>
+                        $4.50 <br>
+                    </p>
+                    <div class="grid-img"><img src="../images/buldak.jpeg" alt="Buldak Ramyeon"></div>
+                </section>
+            </div>
+            <div class="grid white-glow-hover">
+                <div class="grid-name" id="sides">Side Dishes</div>
+                <section class="grid-item c1">
+                    <div class="grid-img"><img src="../images/tteobokki.jpeg" alt="tteobokki"></div>
+                    <p>
+                        Tteobokki <br>
+                        Sweet or Spicy Flavour <br>
+                        $3.00 <br>
+                    </p>
+                </section>
+                <section class="grid-item c5">
+                    <div class="grid-img"><img src="../images/fishCake.jpeg" alt="fish cake"></div>
+                    <p>
+                       Fish Cake <br>
+                       Popular Light Bite <br>
+                       $3.00 <br>
+                   </p>
+                </section>
+                <div class="grid-img"><img src="../images/sides.jpeg" alt="sides graphic"></div>
+                <section class="grid-item c3 right">
+                    <p>
+                       Corn Dog <br>
+                       Must-order <br>
+                       $3.00 <br>
+                   </p>
+                    <div class="grid-img"><img src="../images/corndog.jpeg" alt="corn dog"></div>
+                </section>
+                <section class="grid-item c4 right">
+                    <p>
+                       Korean Fried Chicken Wing <br>
+                       Garlic or Spicy Flavour <br>
+                       $1.50 <br>
+                   </p>
+                    <div class="grid-img"><img src="../images/chicken.jpeg" alt="chicken wings"></div>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <p>Copyright &copy; done by Min Phyo Thura</p>
+        </footer>
+    </main>
+    
+</body>
+</html>

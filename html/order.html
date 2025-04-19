@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024px, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
+    <style>
+        main {
+            background-image: url(../images/menu-bg.png);
+            background-size: cover;
+        }
+        #flex-order {
+            display: flex;
+            justify-content: space-around;
+        }
+        #left-flex, #right-flex {
+            width: 450px;
+        }
+        section {
+            padding: 5px;
+            background-color: #893F04;
+            font-size: 1.5em;
+            color: white;
+            font-variant: small-caps;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            border: 1px solid black;
+        }
+        #guide {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        .flex-dish {
+            display: flex;
+            height: 145px;
+            opacity: 0.8;
+            border: 1px black solid;
+        }
+        .flex-dish:hover {
+            opacity: 1;
+            box-shadow: 5px 10px 10px 8px grey;
+        }
+        .flex-img {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+        .flex-img img {
+            width: 100%;
+        }
+        .flex-info {
+            flex: 2;
+            padding-left: 10px;
+            display: grid;
+            align-items: center;
+        }
+        .price {
+            display: none;
+            position: absolute;
+            top: 40%;
+            left: 35%;
+            font-size: 1.2em;
+            font-weight: 500;
+            text-align: center;
+        }
+        .price2 {
+            top: 30%;
+            left: 25%;
+        }
+        label {
+            display: inline-block;
+            width: 70px;
+            vertical-align: top;
+        }
+        .no-width-input, .no-width-label {
+            display: inline;
+            width: auto;
+        }
+        .no-width-label {
+            margin-left: 3px;
+            margin-right: 5px;
+        }
+        .name {
+            width: 250px;
+        }
+        input {
+            width: 200px;
+            margin-top: 5px;
+        }
+        textarea {
+            width: 203px;
+            margin-top: 5px;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 15px;
+        }
+        .hidden {
+            display: none;
+        }
+        input[type="checkbox"]:checked ~ .hidden {
+            display: block;
+        }
+        input[type="checkbox"]:checked ~ * {
+            font-weight: bold;
+        }
+        .flex-img:hover img {
+            filter: blur(3px);
+        }
+        .flex-img:hover .price {
+            display: block;
+            opacity: 1;
+        }
+        button {
+            width: 135px;
+            margin: 10px;
+            font-size: 1.2em;
+            line-height: 2em;
+            font-variant: small-caps;
+            border-radius: 10px;
+            background-color: #893F04;
+            color: white;
+            box-shadow: 3px 5px 10px 0 grey;
+        }
+        button:hover {
+            background-color: #BF8654;
+            color: black;
+        }
+        #button-sticky {
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div>
+                <div><a href="../html/index.html">
+                    <img src="../images/logo.png" alt="logo" id="logo"></a>
+                    <span class="title">Myeongdong Kitchen</span>
+                </div>
+                <nav><a href="../html/index.html"><i class="material-symbols-outlined middle">home</i>Home</a></nav>
+                <nav><a href="../html/menu.html"><i class="material-symbols-outlined middle">menu_book</i>Menu</a></nav>
+                <nav id="current"><a href="../html/order.html"><i class="material-symbols-outlined middle">restaurant_menu</i>Order</a></nav>
+                <nav><a href="../html/about.html"><i class="material-symbols-outlined middle">info</i>About Us</a></nav>
+            </div>  
+            <p class="box"><a href="../html/member.html"><i class="material-symbols-outlined middle">login</i>Log in</a></p>
+        </header>
+            <div class="sub-header"><span>Order</span></div>
+            <div id="guide"><p>Choose your favourite dish to enter the quantity and requests.</p></div>
+        <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">
+            <div id="flex-order">
+                <div id="left-flex">
+                    <section>Best Seller</section>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/japchae.jpeg" alt="japchae"><p class="price">$4.50</p></div>
+                        <div class="flex-info c1">
+                            <div>
+                                <input type="checkbox" id="japchae" name="dish01" value="japchae">
+                                <label for="japchae" class="name">Japchae</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty01">Quantity</label>
+                                        <input type="text" id="qty01" name="qty01" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req01">Request</label>
+                                        <textarea name="req01" id="req01" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/bulgogi.jpeg" alt="chicken bulgogi"><p class="price">$6.00</p></div>
+                        <div class="flex-info c3">
+                            <div>
+                                <input type="checkbox" id="chxbulgogi" name="dish02" value="chxbulgogi">
+                                <label for="chxbulgogi" class="name">Chicken Bulgogi with Kimchi Soup</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty02">Quantity</label>
+                                        <input type="text" id="qty02" name="qty02" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req02">Request</label>
+                                        <textarea name="req02" id="req02" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/chxGinseng.jpeg" alt="Chicken Ginseng"><p class="price">$7.00</p></div>
+                        <div class="flex-info c5">
+                            <div>
+                                <input type="checkbox" id="ginseng" name="dish03" value="chxginseng">
+                                <label for="ginseng" class="name">Ginseng Soup</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty03">Quantity</label>
+                                        <input type="text" id="qty03" name="qty03" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req03">Request</label>
+                                        <textarea name="req03" id="req03" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/armyStew.jpeg" alt="army stew"><p class="price">$9.00</p></div>
+                        <div class="flex-info c2">
+                            <div>
+                                <input type="checkbox" id="armyStew" name="dish04" value="armyStew">
+                                <label for="armyStew" class="name">Army Stew with Rice</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty04">Quantity</label>
+                                        <input type="text" id="qty04" name="qty04" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req04">Request</label>
+                                        <textarea name="req04" id="req04" rows="2"></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="meat">Choice of Meat</label>
+                                        <input type="radio" name="meat04" id="chx04" value="chicken" class="no-width-input" checked><label for="chx04" class="no-width-label">Chicken</label>
+                                        <input type="radio" name="meat04" id="pork04" value="pork" class="no-width-input"><label for="pork04" class="no-width-label">Pork</label>
+                                        <input type="radio" name="meat04" id="beef04" value="beef" class="no-width-input"><label for="beef04" class="no-width-label">Beef</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section>Kimchi Lover</section>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/kimchiRice.jpeg" alt="kimchi fried rice"><p class="price">$4.50</p></div>
+                        <div class="flex-info c4">
+                            <div>
+                                <input type="checkbox" id="kimchiRice" name="dish09" value="kimchiRice">
+                                <label for="kimchiRice" class="name">Kimchi Fried Rice </label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty09">Quantity</label>
+                                        <input type="text" id="qty09" name="qty09" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req09">Request</label>
+                                        <textarea name="req09" id="req09" rows="2"></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="meat">Choice of Meat</label>
+                                        <input type="radio" name="meat09" id="chx09" value="chicken" class="no-width-input" checked><label for="chx09" class="no-width-label">Chicken</label>
+                                        <input type="radio" name="meat09" id="pork09" value="pork" class="no-width-input"><label for="pork09" class="no-width-label">Pork</label>
+                                        <input type="radio" name="meat09" id="beef09" value="beef" class="no-width-input"><label for="beef09" class="no-width-label">Beef</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/kimchiRamyeon.jpeg" alt="Kimchi Ramen"><p class="price">$4.50</p></div>
+                        <div class="flex-info c3">
+                            <div>
+                                <input type="checkbox" id="kimchiRamyeon" name="dish10" value="kimchiRamyeon">
+                                <label for="kimchiRamyeon" class="name">Kimchi Ramen</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty10">Quantity</label>
+                                        <input type="text" id="qty10" name="qty10" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req10">Request</label>
+                                        <textarea name="req10" id="req10" rows="2"></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="meat">Choice of Meat</label>
+                                        <input type="radio" name="meat10" id="chx10" value="chicken" class="no-width-input" checked><label for="chx10" class="no-width-label">Chicken</label>
+                                        <input type="radio" name="meat10" id="pork10" value="pork" class="no-width-input"><label for="pork10" class="no-width-label">Pork</label>
+                                        <input type="radio" name="meat10" id="beef10" value="beef" class="no-width-input"><label for="beef10" class="no-width-label">Beef</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/kimchiJjigae.jpeg" alt="Kimchi Stew"><p class="price">$4.00</p></div>
+                        <div class="flex-info c1">
+                            <div>
+                                <input type="checkbox" id="kimchiJjigae" name="dish11" value="kimchiJjigae">
+                                <label for="kimchiJjigae" class="name">Kimchi Jjigae</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty11">Quantity</label>
+                                        <input type="text" id="qty11" name="qty11" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req11">Request</label>
+                                        <textarea name="req11" id="req11" rows="2"></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="meat">Choice of Meat</label>
+                                        <input type="radio" name="meat11" id="chx11" value="chicken" class="no-width-input" checked><label for="chx11" class="no-width-label">Chicken</label>
+                                        <input type="radio" name="meat11" id="pork11" value="pork" class="no-width-input"><label for="pork11" class="no-width-label">Pork</label>
+                                        <input type="radio" name="meat11" id="beef11" value="beef" class="no-width-input"><label for="beef11" class="no-width-label">Beef</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/kimchiPancake.jpeg" alt="Kimchi Pancake"><p class="price">$3.00</p></div>
+                        <div class="flex-info c5">
+                            <div>
+                                <input type="checkbox" id="kimchiPancake" name="dish12" value="kimchiPancake">
+                                <label for="kimchiPancake" class="name">Kimchi Pancake</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty12">Quantity</label>
+                                        <input type="text" id="qty12" name="qty12" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req12">Request</label>
+                                        <textarea name="req12" id="req12" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section>Ramyeon (Noodle)</section>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/jjajjangmyeong.jpeg" alt="Jjajjangmyeong"><p class="price">$4.50</p></div>
+                        <div class="flex-info c4">
+                            <div>
+                                <input type="checkbox" id="Jjajjangmyeong" name="dish17" value="Jjajjangmyeong">
+                                <label for="Jjajjangmyeong" class="name">Jjajjangmyeong</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty17">Quantity</label>
+                                        <input type="text" id="qty17" name="qty17" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req17">Request</label>
+                                        <textarea name="req17" id="req17" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/jjampong.jpeg" alt="Jjampong"><p class="price">$5.50</p></div>
+                        <div class="flex-info c1">
+                            <div>
+                                <input type="checkbox" id="Jjampong" name="dish18" value="Jjampong">
+                                <label for="Jjampong" class="name">Jjampong</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty18">Quantity</label>
+                                        <input type="text" id="qty18" name="qty18" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req18">Request</label>
+                                        <textarea name="req18" id="req18" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/shin.jpeg" alt="Creamy Shin Ramyeon"><p class="price">$4.00</p></div>
+                        <div class="flex-info c3">
+                            <div>
+                                <input type="checkbox" id="Creamy-Shin-Ramyeon" name="dish19" value="Creamy Shin Ramyeon">
+                                <label for="Creamy-Shin-Ramyeon" class="name">Creamy Shin Ramyeon</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty19">Quantity</label>
+                                        <input type="text" id="qty19" name="qty19" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req19">Request</label>
+                                        <textarea name="req19" id="req19" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/buldak.jpeg" alt="Buldak Ramyeon"><p class="price">$4.50</p></div>
+                        <div class="flex-info c2">
+                            <div>
+                                <input type="checkbox" id="Buldak-Ramyeon" name="dish20" value="Buldak Ramyeon">
+                                <label for="Buldak-Ramyeon" class="name">Buldak Ramyeon</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty20">Quantity</label>
+                                        <input type="text" id="qty20" name="qty20" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req20">Request</label>
+                                        <textarea name="req20" id="req20" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="right-flex">
+                    <section>Main Dishes</section>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/bibimbap.jpeg" alt="bibimbap"><p class="price">$4.50</p></div>
+                        <div class="flex-info c2">
+                            <div>
+                                <input type="checkbox" id="Bibimbap" name="dish05" value="Bibimbap">
+                                <label for="Bibimbap" class="name">Bibimbap</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty05">Quantity</label>
+                                        <input type="text" id="qty05" name="qty05" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req05">Request</label>
+                                        <textarea name="req05" id="req05" rows="2"></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="meat">Choice of Meat</label>
+                                        <input type="radio" name="meat05" id="chx05" value="chicken" class="no-width-input" checked><label for="chx05" class="no-width-label">Chicken</label>
+                                        <input type="radio" name="meat05" id="pork05" value="pork" class="no-width-input"><label for="pork05" class="no-width-label">Pork</label>
+                                        <input type="radio" name="meat05" id="beef05" value="beef" class="no-width-input"><label for="beef05" class="no-width-label">Beef</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/cheesyRice.jpeg" alt="cheesy chicken rice"><p class="price">$5.00</p></div>
+                        <div class="flex-info c4">
+                            <div>
+                                <input type="checkbox" id="chxRice" name="dish06" value="Cheesy Chicken Rice">
+                                <label for="chxRice" class="name">Cheesy Chicken Rice</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty06">Quantity</label>
+                                        <input type="text" id="qty06" name="qty06" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req06">Request</label>
+                                        <textarea name="req06" id="req06" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/salmon.jpeg" alt="grilled salmon"><p class="price">$5.50</p></div>
+                        <div class="flex-info c3">
+                            <div>
+                                <input type="checkbox" id="salmon" name="dish07" value="Grilled Salmon">
+                                <label for="salmon" class="name">Grilled Salmon</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty07">Quantity</label>
+                                        <input type="text" id="qty07" name="qty07" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req07">Request</label>
+                                        <textarea name="req07" id="req07" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/bulgogi2.jpeg" alt="chicken bulgogi"><p class="price">$4.50</p></div>
+                        <div class="flex-info c1">
+                            <div>
+                                <input type="checkbox" id="Bulgogi" name="dish08" value="Bulgogi">
+                                <label for="Bulgogi" class="name">Bulgogi</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty08">Quantity</label>
+                                        <input type="text" id="qty08" name="qty08" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req08">Request</label>
+                                        <textarea name="req08" id="req08" rows="2"></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="meat">Choice of Meat</label>
+                                        <input type="radio" name="meat08" id="chx08" value="chicken" class="no-width-input" checked><label for="chx08" class="no-width-label">Chicken</label>
+                                        <input type="radio" name="meat08" id="pork08" value="pork" class="no-width-input"><label for="pork08" class="no-width-label">Pork</label>
+                                        <input type="radio" name="meat08" id="beef08" value="beef" class="no-width-input"><label for="beef08" class="no-width-label">Beef</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section>Jjigae (Stew)</section>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/busanGukbap.jpeg" alt="busan gukbap"><p class="price">$6.00</p></div>
+                        <div class="flex-info c5">
+                            <div>
+                                <input type="checkbox" id="Gukbap" name="dish13" value="Busan Gukbap">
+                                <label for="Gukbap" class="name">Busan Gukbap</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty13">Quantity</label>
+                                        <input type="text" id="qty13" name="qty13" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req13">Request</label>
+                                        <textarea name="req13" id="req13" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/doenjang.jpeg" alt="doenjang jjigae"><p class="price">$6.00</p></div>
+                        <div class="flex-info c4">
+                            <div>
+                                <input type="checkbox" id="Doenjang" name="dish14" value="Doenjang Jjigae">
+                                <label for="Doenjang" class="name">Doenjang Jjigae</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty14">Quantity</label>
+                                        <input type="text" id="qty14" name="qty14" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req14">Request</label>
+                                        <textarea name="req14" id="req14" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/chxPorridge.jpeg" alt="Chicken Porridge"><p class="price">$4.00</p></div>
+                        <div class="flex-info c1">
+                            <div>
+                                <input type="checkbox" id="chxPorridge" name="dish15" value="Chicken Porridge">
+                                <label for="chxPorridge" class="name">Chicken Porridge</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty15">Quantity</label>
+                                        <input type="text" id="qty15" name="qty15" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req15">Request</label>
+                                        <textarea name="req15" id="req15" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/mushPorridge.jpeg" alt="Mushroom Porridge"><p class="price">$3.50</p></div>
+                        <div class="flex-info c2">
+                            <div>
+                                <input type="checkbox" id="mushPorridge" name="dish16" value="Mushroom Porridge">
+                                <label for="mushPorridge" class="name">Mushroom Porridge</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty16">Quantity</label>
+                                        <input type="text" id="qty16" name="qty16" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req16">Request</label>
+                                        <textarea name="req16" id="req16" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section>Side Dishes</section>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/tteobokki.jpeg" alt="tteobokki"><p class="price">$3.00</p></div>
+                        <div class="flex-info c5">
+                            <div>
+                                <input type="checkbox" id="Tteobokki" name="dish21" value="Tteobokki">
+                                <label for="Tteobokki" class="name">Tteobokki</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty21">Quantity</label>
+                                        <input type="text" id="qty21" name="qty21" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req21">Request</label>
+                                        <textarea name="req21" id="req21" rows="2"></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="meat">Flavour</label>
+                                        <input type="radio" name="flavour21" id="sweet21" value="sweet" class="no-width-input"><label for="sweet21" class="no-width-label">Sweet</label>
+                                        <input type="radio" name="flavour21" id="spicy21" value="spicy" class="no-width-input" checked><label for="spicy21" class="no-width-label">Spicy</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/fishCake.jpeg" alt="fish cake"><p class="price price2">$3.00<br>per piece</p></div>
+                        <div class="flex-info c3">
+                            <div>
+                                <input type="checkbox" id="fishCake" name="dish22" value="Fish Cake">
+                                <label for="fishCake" class="name">Fish Cake</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty22">Quantity</label>
+                                        <input type="text" id="qty22" name="qty22" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req22">Request</label>
+                                        <textarea name="req22" id="req22" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/corndog.jpeg" alt="corn dog"><p class="price price2">$3.00<br>per piece</p></div>
+                        <div class="flex-info c4">
+                            <div>
+                                <input type="checkbox" id="corndog" name="dish23" value="Corn Dog">
+                                <label for="corndog" class="name">Corn Dog</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty23">Quantity</label>
+                                        <input type="text" id="qty23" name="qty23" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req23">Request</label>
+                                        <textarea name="req23" id="req23" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-dish">
+                        <div class="flex-img"><img src="../images/chicken.jpeg" alt="chicken wings"><p class="price price2">$1.50<br>per piece</p></div>
+                        <div class="flex-info c2">
+                            <div>
+                                <input type="checkbox" id="chicken" name="dish24" value="Korean Fried Chicken Wing">
+                                <label for="chicken" class="name">Korean Fried Chicken Wing</label>
+                                <div class="hidden">
+                                    <div>
+                                        <label for="qty24">Quantity</label>
+                                        <input type="text" id="qty24" name="qty24" value="1" pattern="[0-9]*">
+                                    </div>
+                                    <div>
+                                        <label for="req24">Request</label>
+                                        <textarea name="req24" id="req24" rows="2"></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="meat">Flavour</label>
+                                        <input type="radio" name="flavour24" id="sweet24" value="sweet" class="no-width-input"><label for="sweet24" class="no-width-label">Sweet</label>
+                                        <input type="radio" name="flavour24" id="spicy24" value="spicy" class="no-width-input" checked><label for="spicy24" class="no-width-label">Spicy</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="button-sticky">
+                <button type="reset">Choose Again</button>
+                <button type="submit">Order Now</button>
+            </div>
+        </form>
+        <footer>
+            <p>Copyright &copy; done by Min Phyo Thura</p>
+        </footer>
+    </main>
+    
+</body>
+</html>

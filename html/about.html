@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024px, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined">
+    <style>
+        main {
+            background-image: linear-gradient(burlywood, rgb(238, 184, 76));
+        }
+        section img {
+            height: 230px;
+            padding-top: 10px;
+        }
+        .left {
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+        section {
+            width: 80%;
+        }
+        section p {
+            line-height: 1.7em;
+            text-align: justify;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+        h2 {
+            font-variant: small-caps;
+        }
+        #mission {
+            clear: both;
+            position: relative;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .right {
+            float: right;
+            margin: 15px 0 15px 15px;
+        }
+        #flower {
+            position: absolute;
+            bottom: 20px;
+            right: 0;
+        }
+        #flower {
+            width: 250px;
+        }
+        #social {
+            margin-top: 5px;
+            display: grid;
+            grid-template-columns: repeat(2,100px);
+            gap: 10px;
+        }
+        #contact {
+            display: flex;
+            justify-content: space-between;
+            height: 300px;
+        }
+        #map img {
+            float: left;
+            width: 50%;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        #map {
+            flex: 2;
+        }
+        #map p {
+            margin-top: 70px;
+        }
+        #social img {
+            padding: 0;
+            height: 100px;
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            border: 1px solid burlywood;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div>
+                <div><a href="../html/index.html">
+                    <img src="../images/logo.png" alt="logo" id="logo"></a>
+                    <span class="title">Myeongdong Kitchen</span>
+                </div>
+                <nav><a href="../html/index.html"><i class="material-symbols-outlined middle">home</i>Home</a></nav>
+                <nav><a href="../html/menu.html"><i class="material-symbols-outlined middle">menu_book</i>Menu</a></nav>
+                <nav><a href="../html/order.html"><i class="material-symbols-outlined middle">restaurant_menu</i>Order</a></nav>
+                <nav id="current"><a href="../html/about.html"><i class="material-symbols-outlined middle">info</i>About Us</a></nav>
+            </div>  
+            <p class="box"><a href="../html/member.html"><i class="material-symbols-outlined middle">login</i>Log in</a></p>
+        </header>
+        <h1 class="title">Myeongdong Kitchen</h1>
+        <section class="center">
+            <img src="../images/profile.jpeg" alt="shop owners" class="left">
+            <h2>Our Story:</h2>
+            <p>Step into the heart of Nanyang Polytechnic's Foodgle Hub and discover Myeongdong Kitchen, a cozy Korean haven founded by the passionate couple, Esther Goh and Tristan Liu. Their love story began on WeChat, revolving around a shared passion for cooking. Inspired by their dream of bringing authentic Korean flavors to the campus, they turned a humble food stall into a beloved culinary gem. From a small corner in the least crowded food court, Myeongdong Kitchen blossomed into a vibrant community hub, offering affordable and delicious Korean dishes.</p>
+            <br>
+            <p>난양 공과대학의 푸드글 허브에 들어가면 열정 넘치는 부부, 에스더 고와 트리스탄 리우가 설립한 명동 키친을 발견할 것입니다. 그들의 사랑 이야기는 WeChat에서 시작되었으며, 이는 요리에 대한 공통된 열정을 중심으로 펼쳐졌습니다. 캠퍼스에 진정한 한국 풍미를 전하고자 하는 꿈에서 영감을 받아, 그들은 작은 음식점을 사랑받는 조리의 보석으로 변모시켰습니다. 가장 붐비지 않은 푸드 코트의 작은 코너에서 명동 키친은 활기찬 공동체 허브로 성장하면서 학생들에게 부담스럽지 않으면서 맛있는 한국 음식을 제공했습니다.</p>
+        </section>
+        <section id="mission" class="center">
+            <img src="../images/flower.png" alt="korea's national flower" id="flower">
+            <h2>Our Mission:</h2>
+            <ul>
+                <li>Craft authentic Korean dishes with love and dedication.</li>
+                <li>Keep prices budget-friendly for the Nanyang Polytechnic community.</li>
+                <li>Build a warm and welcoming space for students to gather and share the joy of good food.</li>
+                <li>Source high-quality ingredients while maintaining affordability.</li>
+                <li>Share the couple's love for Korean cuisine through a diverse and flavorful menu.</li>
+            </ul>
+            <br>
+            <ul>
+                <li>사랑과 헌신으로 진정한 한국 요리 창조</li>
+                <li>난양 공과대학 공동체를 위해 저렴한 가격으로 유지</li>
+                <li>학생들이 모여 따뜻하고 환영받는 공간 조성</li>
+                <li>고품질 재료를 확보하면서 가격을 합리적으로 유지</li>
+                <li>부부의 한국 요리에 대한 사랑을 다양하고 풍부한 메뉴를 통해 나누기</li>
+            </ul>
+            <br>
+        </section>
+        <section class="center">
+            <img src="../images/shop.jpeg" alt="shop" class="right">
+            <h2>Come and Join Us!</h2>
+            <p>At Myeongdong Kitchen, we invite you to embark on a culinary journey that goes beyond just a meal. Our cozy corner in Foodgle Hub is not just a food stall – it's a haven where stories are shared, laughter echoes, and friendships are forged. With our affordable and authentic Korean dishes, we promise a delightful experience that extends far beyond your taste buds. Join us in creating a vibrant community where good food brings people together. Whether you're a student seeking a campus-priced treat or a food enthusiast eager for genuine Korean flavors, Myeongdong Kitchen welcomes you with open arms. Come savor the magic of Korea right here at Nanyang Polytechnic!</p>
+            <br>
+            <p>명동 키친에서는 식사 이상의 요리 여행에 참여하도록 초대합니다. Foodgle Hub의 아늑한 코너는 단순한 음식점이 아닌 이야기가 나눠지고, 웃음소리가 울려 퍼지며, 우정이 형성되는 곳입니다. 우리의 저렴하고 진정한 한국 음식으로 인해 맛 이상의 즐거운 경험이 약속되어 있습니다. 학생들이 캠퍼스 가격의 즐거움을 찾거나 진정한 한국 풍미에 열려있는 음식 애호가라면 명동 키친은 환영합니다. 여러분도 난양 공과대학에서 한국의 매력을 만끽해 보세요!</p>
+        </section>
+        <section id="contact" class="center">
+            <div id="map">
+                <a href="https://www.google.com.au/maps/place/MyeongDong+Kitchen/@1.3775196,103.8477097,17.5z/data=!4m6!3m5!1s0x31da17f31632bc09:0xcae8ab592b693c04!8m2!3d1.3769308!4d103.8495586!16s%2Fg%2F11t_zktxqf?entry=ttu" target="_blank"><img src="../images/map.jpeg" alt="map of restaurant" class="white-glow-hover"></a>
+                <p>
+                    Locate Us! <br>
+                    180 Ang Mo Kio AVE 8, <br>
+                    BLK P1 Basement, <br>
+                    Stall 5 Foodgle Hub, <br>
+                    Singapore 569830<br>
+                    8600 8007 
+                </p>
+            </div>
+            <div>
+                <p>Follow us on Socail Media <br>to get latest news of promotions and new dishes!</p>
+                <div id="social">
+                    <div><a href="https://www.facebook.com/p/Myeongdong-Kitchen-61552857332787/" target="_blank"><img src="../images/facebook.png" alt="facebook" class="white-glow-hover"></a></div>
+                    <div><a href="https://www.instagram.com/?hl=en" target="_blank"><img src="../images/instagram.jpeg" alt="instagram" class="white-glow-hover"></a></div>
+                    <div><a href="https://www.whatsapp.com" target="_blank"><img src="../images/whatsapp.png" alt="whatsapp" class="white-glow-hover"></a></div>
+                    <div><a href="https://web.telegram.org/k/" target="_blank"><img src="../images/telegram.png" alt="telegram" class="white-glow-hover"></a></div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>Copyright &copy; done by Min Phyo Thura</p>
+        </footer>
+    </main>
+    
+</body>
+</html>
