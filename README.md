@@ -82,9 +82,8 @@ Other aspects would be that tiny intuitive animations makes the website a lot mo
 
 ## 👩‍💼 Author
 
-**Min Phyo Thura**  
-Diploma in AI & Data Engineering
-NYP School of Engineering (DADE)  
+[**Min Phyo Thura**](https://github.com/myriosMin)  
+[Year 1, Web Development Assignment, Diploma in AI & Data Engineering, Nanyang Polytechnic]
 
 ---
 
